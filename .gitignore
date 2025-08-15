@@ -1,0 +1,8 @@
+# For Bundled code
+#!dist/
+#*
+
+# For react code
+node_modules/
+dist/
+.env
