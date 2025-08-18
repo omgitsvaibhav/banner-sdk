@@ -532,7 +532,7 @@ const CookieBanner = () => {
           <div className="w-full flex max-md:flex-col max-md:gap-y-2 md:gap-x-2 justify-center items-center px-5">
             <button
               onClick={handleRejectAll}
-              className="!flex-1 !p-3 !text-sm !rounded-md border hover:cursor-pointer disabled:hover:cursor-not-allowed max-md:w-full"
+              className="!flex-1 !p-3 !text-sm !rounded-md border hover:cursor-pointer disabled:hover:!cursor-not-allowed max-md:w-full"
               style={{
                 backgroundColor: bannerData.declineButtonColor,
                 color: bannerData.declineButtonTextColor,
@@ -556,7 +556,7 @@ const CookieBanner = () => {
                 hasSavedPreference &&
                 areSettingsEqual(prevCookieSettings, cookieSettings)
               }
-              className="!flex-1 !p-3 !text-sm !rounded-md border-none hover:cursor-pointer disabled:!bg-gray-300 disabled:!text-[#7c828b] disabled:hover:cursor-not-allowed max-md:w-full"
+              className="!flex-1 !p-3 !text-sm !rounded-md border-none hover:cursor-pointer disabled:!bg-gray-300 disabled:!text-[#7c828b] disabled:hover:!cursor-not-allowed max-md:w-full"
               style={{
                 backgroundColor: bannerData.acceptButtonColor,
                 color: bannerData.acceptButtonTextColor,
