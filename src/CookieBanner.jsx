@@ -28,6 +28,7 @@ const CookieBanner = () => {
   const [shouldShowBanner, setShouldShowBanner] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
   const [interactionId, setInteractionId] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const areSettingsEqual = (a, b) => {
     return JSON.stringify(a) === JSON.stringify(b);
@@ -177,6 +178,7 @@ const CookieBanner = () => {
   }, [isModalOpen]);
 
   const handleAccept = async () => {
+    setLoading(true);
     setHasInteracted(true);
     setIsVisible(false);
 
@@ -226,11 +228,18 @@ const CookieBanner = () => {
       });
     }
 
-    await trackConsentAction(status, cookieSettings);
-    await trackInteraction(status, cookieSettings);
+    try {
+      await trackConsentAction(status, cookieSettings);
+      await trackInteraction(status, cookieSettings);
+    } catch (error) {
+      console.error("Cookie Banner SDK: Error tracking consent action:", error);
+    } finally {
+      setLoading(false); // Stop loading
+    }
   };
 
   const handleRejectAll = async () => {
+    setLoading(true);
     setHasInteracted(true);
     setIsVisible(false);
 
@@ -277,8 +286,14 @@ const CookieBanner = () => {
       });
     }
 
-    await trackConsentAction(status, rejectedSettings);
-    await trackInteraction(status, rejectedSettings);
+    try {
+      await trackConsentAction(status, rejectedSettings);
+      await trackInteraction(status, rejectedSettings);
+    } catch (error) {
+      console.error("Cookie Banner SDK: Error tracking consent action:", error);
+    } finally {
+      setLoading(false); // Stop loading
+    }
   };
 
   const toggleCookieSetting = (type) => {
@@ -542,10 +557,12 @@ const CookieBanner = () => {
                   "#000000",
               }}
               disabled={
-                areSettingsEqual(prevCookieSettings, cookieSettings) &&
-                areAllNonNecessaryCookiesRejected(cookieSettings)
+                loading ||
+                (areSettingsEqual(prevCookieSettings, cookieSettings) &&
+                  areAllNonNecessaryCookiesRejected(cookieSettings))
               }
             >
+              {loading && "Loading..."}
               {!hasSavedPreference
                 ? bannerData.declineButtonText
                 : "Withdraw your Consent"}
@@ -553,8 +570,9 @@ const CookieBanner = () => {
             <button
               onClick={handleAccept}
               disabled={
-                hasSavedPreference &&
-                areSettingsEqual(prevCookieSettings, cookieSettings)
+                loading ||
+                (hasSavedPreference &&
+                  areSettingsEqual(prevCookieSettings, cookieSettings))
               }
               className="!flex-1 !p-3 !text-sm !rounded-md border-none hover:cursor-pointer disabled:!bg-gray-300 disabled:!text-[#7c828b] disabled:hover:!cursor-not-allowed max-md:w-full"
               style={{
@@ -566,6 +584,7 @@ const CookieBanner = () => {
                   "#000000",
               }}
             >
+              {loading && "Loading..."}
               {!hasSavedPreference
                 ? bannerData.acceptButtonText
                 : "Change your Consent"}
@@ -657,6 +676,7 @@ const CookieBanner = () => {
                 {bannerData.manageButtonText}
               </button>
               <button
+                disabled={loading}
                 onClick={handleRejectAll}
                 className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border"
                 style={{
@@ -668,9 +688,11 @@ const CookieBanner = () => {
                     "#000000",
                 }}
               >
+                {loading && "Loading..."}
                 {bannerData.declineButtonText}
               </button>
               <button
+                disabled={loading}
                 onClick={handleAccept}
                 className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border-none"
                 style={{
@@ -682,6 +704,7 @@ const CookieBanner = () => {
                     "#000000",
                 }}
               >
+                {loading && "Loading..."}
                 {bannerData.acceptButtonText}
               </button>
             </div>
@@ -764,6 +787,7 @@ const CookieBanner = () => {
                   {bannerData.manageButtonText}
                 </button>
                 <button
+                  disabled={loading}
                   onClick={handleRejectAll}
                   className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border"
                   style={{
@@ -775,9 +799,11 @@ const CookieBanner = () => {
                       "#000000",
                   }}
                 >
+                  {loading && "Loading..."}
                   {bannerData.declineButtonText}
                 </button>
                 <button
+                  disabled={loading}
                   onClick={handleAccept}
                   className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border-none"
                   style={{
@@ -789,6 +815,7 @@ const CookieBanner = () => {
                       "#000000",
                   }}
                 >
+                  {loading && "Loading..."}
                   {bannerData.acceptButtonText}
                 </button>
               </div>
@@ -862,6 +889,7 @@ const CookieBanner = () => {
                   {bannerData.manageButtonText}
                 </button>
                 <button
+                  disabled={loading}
                   onClick={handleRejectAll}
                   className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border"
                   style={{
@@ -873,9 +901,11 @@ const CookieBanner = () => {
                       "#000000",
                   }}
                 >
+                  {loading && "Loading..."}
                   {bannerData.declineButtonText}
                 </button>
                 <button
+                  disabled={loading}
                   onClick={handleAccept}
                   className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border-none"
                   style={{
@@ -887,6 +917,7 @@ const CookieBanner = () => {
                       "#000000",
                   }}
                 >
+                  {loading && "Loading..."}
                   {bannerData.acceptButtonText}
                 </button>
               </div>
