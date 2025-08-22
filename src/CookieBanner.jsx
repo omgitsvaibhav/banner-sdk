@@ -547,14 +547,15 @@ const CookieBanner = () => {
           <div className="w-full flex max-md:flex-col max-md:gap-y-2 md:gap-x-2 justify-center items-center px-5">
             <button
               onClick={handleRejectAll}
-              className="!flex-1 !p-3 !text-sm !rounded-md border hover:cursor-pointer disabled:hover:!cursor-not-allowed max-md:w-full"
+              className="!flex-1 !p-3 !text-sm !rounded-md border hover:cursor-pointer disabled:hover:!cursor-not-allowed max-md:w-full focus:!outline-none"
               style={{
                 backgroundColor: bannerData.declineButtonColor,
                 color: bannerData.declineButtonTextColor,
-                borderColor:
-                  bannerData.declineButtonBorder === "#ffffff" &&
-                  bannerData.backgroundColor === "#ffffff" &&
-                  "#000000",
+                border:
+                  bannerData.declineButtonColor === "#ffffff" &&
+                  bannerData.backgroundColor === "#ffffff"
+                    ? "1px solid #e5e7eb"
+                    : "none",
               }}
               disabled={
                 loading ||
@@ -574,14 +575,15 @@ const CookieBanner = () => {
                 (hasSavedPreference &&
                   areSettingsEqual(prevCookieSettings, cookieSettings))
               }
-              className="!flex-1 !p-3 !text-sm !rounded-md border-none hover:cursor-pointer disabled:!bg-gray-300 disabled:!text-[#7c828b] disabled:hover:!cursor-not-allowed max-md:w-full"
+              className="!flex-1 !p-3 !text-sm !rounded-md border-none hover:cursor-pointer disabled:!bg-gray-300 disabled:!text-[#7c828b] disabled:hover:!cursor-not-allowed max-md:w-full focus:!outline-none"
               style={{
                 backgroundColor: bannerData.acceptButtonColor,
                 color: bannerData.acceptButtonTextColor,
-                borderColor:
+                border:
                   bannerData.acceptButtonColor === "#ffffff" &&
-                  bannerData.backgroundColor === "#ffffff" &&
-                  "#000000",
+                  bannerData.backgroundColor === "#ffffff"
+                    ? "1px solid #e5e7eb"
+                    : "none",
               }}
             >
               {loading && "Loading..."}
@@ -663,7 +665,7 @@ const CookieBanner = () => {
             <div className="flex flex-col gap-y-2 mb-3">
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border"
+                className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                 style={{
                   backgroundColor: bannerData.manageButtonColor,
                   color: bannerData.manageButtonTextColor,
@@ -678,14 +680,15 @@ const CookieBanner = () => {
               <button
                 disabled={loading}
                 onClick={handleRejectAll}
-                className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border"
+                className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                 style={{
                   backgroundColor: bannerData.declineButtonColor,
                   color: bannerData.declineButtonTextColor,
-                  borderColor:
-                    bannerData.declineButtonBorder === "#ffffff" &&
-                    bannerData.backgroundColor === "#ffffff" &&
-                    "#000000",
+                  border:
+                    bannerData.declineButtonColor === "#ffffff" &&
+                    bannerData.backgroundColor === "#ffffff"
+                      ? "1px solid #e5e7eb"
+                      : "none",
                 }}
               >
                 {loading && "Loading..."}
@@ -694,14 +697,15 @@ const CookieBanner = () => {
               <button
                 disabled={loading}
                 onClick={handleAccept}
-                className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border-none"
+                className="flex-1 !py-1.5 hover:cursor-pointer text-sm font-medium rounded-md border-none focus:!outline-none"
                 style={{
                   backgroundColor: bannerData.acceptButtonColor,
                   color: bannerData.acceptButtonTextColor,
-                  borderColor:
+                  border:
                     bannerData.acceptButtonColor === "#ffffff" &&
-                    bannerData.backgroundColor === "#ffffff" &&
-                    "#000000",
+                    bannerData.backgroundColor === "#ffffff"
+                      ? "1px solid #e5e7eb"
+                      : "none",
                 }}
               >
                 {loading && "Loading..."}
@@ -774,7 +778,7 @@ const CookieBanner = () => {
               <div className="flex gap-2 mb-3">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border"
+                  className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.manageButtonColor,
                     color: bannerData.manageButtonTextColor,
@@ -789,14 +793,15 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleRejectAll}
-                  className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border"
+                  className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.declineButtonColor,
                     color: bannerData.declineButtonTextColor,
-                    borderColor:
-                      bannerData.declineButtonBorder === "#ffffff" &&
-                      bannerData.backgroundColor === "#ffffff" &&
-                      "#000000",
+                    border:
+                      bannerData.declineButtonColor === "#ffffff" &&
+                      bannerData.backgroundColor === "#ffffff"
+                        ? "1px solid #e5e7eb"
+                        : "none",
                   }}
                 >
                   {loading && "Loading..."}
@@ -805,14 +810,15 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleAccept}
-                  className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border-none"
+                  className="flex-1 py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border-none focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.acceptButtonColor,
                     color: bannerData.acceptButtonTextColor,
-                    borderColor:
+                    border:
                       bannerData.acceptButtonColor === "#ffffff" &&
-                      bannerData.backgroundColor === "#ffffff" &&
-                      "#000000",
+                      bannerData.backgroundColor === "#ffffff"
+                        ? "1px solid #e5e7eb"
+                        : "none",
                   }}
                 >
                   {loading && "Loading..."}
@@ -876,7 +882,7 @@ const CookieBanner = () => {
               <div className="w-2/5 flex gap-x-2 justify-end items-center">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border"
+                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.manageButtonColor,
                     color: bannerData.manageButtonTextColor,
@@ -891,14 +897,15 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleRejectAll}
-                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border"
+                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.declineButtonColor,
                     color: bannerData.declineButtonTextColor,
-                    borderColor:
-                      bannerData.declineButtonBorder === "#ffffff" &&
-                      bannerData.backgroundColor === "#ffffff" &&
-                      "#000000",
+                    border:
+                      bannerData.declineButtonColor === "#ffffff" &&
+                      bannerData.backgroundColor === "#ffffff"
+                        ? "1px solid #e5e7eb"
+                        : "none",
                   }}
                 >
                   {loading && "Loading..."}
@@ -907,14 +914,15 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleAccept}
-                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border-none"
+                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border-none focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.acceptButtonColor,
                     color: bannerData.acceptButtonTextColor,
-                    borderColor:
+                    border:
                       bannerData.acceptButtonColor === "#ffffff" &&
-                      bannerData.backgroundColor === "#ffffff" &&
-                      "#000000",
+                      bannerData.backgroundColor === "#ffffff"
+                        ? "1px solid #e5e7eb"
+                        : "none",
                   }}
                 >
                   {loading && "Loading..."}
