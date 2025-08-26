@@ -1,8 +1,8 @@
 // API Configuration
-//export const API_BASE_URL = "http://localhost:8005/cookie-manager/api/v1";
+export const API_BASE_URL = "http://localhost:8005/cookie-manager/api/v1";
 //export const API_BASE_URL = "https://qa-bluetic-cookie.neokred.tech:9444/cookie-manager/api/v1";
 //export const API_BASE_URL = "https://preprod-bluetic-cm-svc.neokred.tech/cookie-manager/api/v1";
-export const API_BASE_URL = "https://cookie-management-svc.blutic.club/cookie-manager/api/v1";
+//export const API_BASE_URL = "https://cookie-management-svc.blutic.club/cookie-manager/api/v1";
 
 let browserId = localStorage.getItem("browserId");
 let domainId = localStorage.getItem("domainId");
