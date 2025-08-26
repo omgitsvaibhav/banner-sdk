@@ -738,8 +738,9 @@ const CookieBanner = () => {
           }`}
           style={{ backgroundColor: bannerData.backgroundColor }}
         >
-          {bannerData.position.startsWith("bottom") || bannerData.position === 'center' ? (
-            // Bottom Banner Layout
+          {(bannerData.position.startsWith("bottom") ||
+            bannerData.position === "center") &&
+          !bannerData.position.includes("overlay") ? (
             <div className="p-6 pb-10 relative">
               <div className="flex justify-between items-center mb-2">
                 <p
@@ -841,7 +842,6 @@ const CookieBanner = () => {
               </div>
             </div>
           ) : (
-            // Top Banner Layout
             <div className="flex justify-between items-center relative px-12 pt-4 pb-9">
               <div className="w-3/5">
                 <div className="flex items-center mb-1 gap-4">
