@@ -730,11 +730,15 @@ const CookieBanner = () => {
               ? `${
                   bannerData.position === "bottom_left" ? "left-4" : "right-4"
                 } bottom-4 max-w-lg rounded-xl shadow-xl overflow-hidden`
-              : "top-0 left-0 w-full shadow-lg"
+              : bannerData.position.includes("overlay")
+              ? `${
+                  bannerData.position === "overlay" ? "top-0" : "bottom-0"
+                } w-full shadow-lg left-0`
+              : "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-lg rounded-xl shadow-xl overflow-hidden"
           }`}
           style={{ backgroundColor: bannerData.backgroundColor }}
         >
-          {bannerData.position.startsWith("bottom") ? (
+          {bannerData.position.startsWith("bottom") || bannerData.position === 'center' ? (
             // Bottom Banner Layout
             <div className="p-6 pb-10 relative">
               <div className="flex justify-between items-center mb-2">
