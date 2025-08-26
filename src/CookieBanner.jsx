@@ -552,8 +552,8 @@ const CookieBanner = () => {
                 backgroundColor: bannerData.declineButtonColor,
                 color: bannerData.declineButtonTextColor,
                 border:
-                  (bannerData.acceptButtonColor === "#ffffff" ||
-                    bannerData.acceptButtonColor === "transparent") &&
+                  (bannerData.declineButtonColor === "#ffffff" ||
+                    bannerData.declineButtonColor === "transparent") &&
                   bannerData.backgroundColor === "#ffffff"
                     ? "1px solid #e5e7eb"
                     : "none",
@@ -672,8 +672,8 @@ const CookieBanner = () => {
                   backgroundColor: bannerData.manageButtonColor,
                   color: bannerData.manageButtonTextColor,
                   border:
-                    (bannerData.acceptButtonColor === "#ffffff" ||
-                      bannerData.acceptButtonColor === "transparent") &&
+                    (bannerData.manageButtonColor === "#ffffff" ||
+                      bannerData.manageButtonColor === "transparent") &&
                     bannerData.backgroundColor === "#ffffff"
                       ? "1px solid #e5e7eb"
                       : "none",
@@ -689,8 +689,8 @@ const CookieBanner = () => {
                   backgroundColor: bannerData.declineButtonColor,
                   color: bannerData.declineButtonTextColor,
                   border:
-                    (bannerData.acceptButtonColor === "#ffffff" ||
-                      bannerData.acceptButtonColor === "transparent") &&
+                    (bannerData.declineButtonColor === "#ffffff" ||
+                      bannerData.declineButtonColor === "transparent") &&
                     bannerData.backgroundColor === "#ffffff"
                       ? "1px solid #e5e7eb"
                       : "none",
@@ -794,8 +794,8 @@ const CookieBanner = () => {
                     backgroundColor: bannerData.manageButtonColor,
                     color: bannerData.manageButtonTextColor,
                     border:
-                      (bannerData.acceptButtonColor === "#ffffff" ||
-                        bannerData.acceptButtonColor === "transparent") &&
+                      (bannerData.manageButtonColor === "#ffffff" ||
+                        bannerData.manageButtonColor === "transparent") &&
                       bannerData.backgroundColor === "#ffffff"
                         ? "1px solid #e5e7eb"
                         : "none",
@@ -811,8 +811,8 @@ const CookieBanner = () => {
                     backgroundColor: bannerData.declineButtonColor,
                     color: bannerData.declineButtonTextColor,
                     border:
-                      (bannerData.acceptButtonColor === "#ffffff" ||
-                        bannerData.acceptButtonColor === "transparent") &&
+                      (bannerData.declineButtonColor === "#ffffff" ||
+                        bannerData.declineButtonColor === "transparent") &&
                       bannerData.backgroundColor === "#ffffff"
                         ? "1px solid #e5e7eb"
                         : "none",
@@ -901,8 +901,8 @@ const CookieBanner = () => {
                     backgroundColor: bannerData.manageButtonColor,
                     color: bannerData.manageButtonTextColor,
                     border:
-                      (bannerData.acceptButtonColor === "#ffffff" ||
-                        bannerData.acceptButtonColor === "transparent") &&
+                      (bannerData.manageButtonColor === "#ffffff" ||
+                        bannerData.manageButtonColor === "transparent") &&
                       bannerData.backgroundColor === "#ffffff"
                         ? "1px solid #e5e7eb"
                         : "none",
@@ -918,8 +918,8 @@ const CookieBanner = () => {
                     backgroundColor: bannerData.declineButtonColor,
                     color: bannerData.declineButtonTextColor,
                     border:
-                      (bannerData.acceptButtonColor === "#ffffff" ||
-                        bannerData.acceptButtonColor === "transparent") &&
+                      (bannerData.declineButtonColor === "#ffffff" ||
+                        bannerData.declineButtonColor === "transparent") &&
                       bannerData.backgroundColor === "#ffffff"
                         ? "1px solid #e5e7eb"
                         : "none",
