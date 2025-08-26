@@ -727,13 +727,13 @@ const CookieBanner = () => {
         <div
           className={`max-md:hidden fixed z-[99999] font-sans ${
             bannerData.position.startsWith("bottom")
-              ? `${
-                  bannerData.position === "bottom_left" ? "left-4" : "right-4"
-                } bottom-4 max-w-lg rounded-xl shadow-xl overflow-hidden`
-              : bannerData.position.includes("overlay")
-              ? `${
-                  bannerData.position === "overlay" ? "top-0" : "bottom-0"
-                } w-full shadow-lg left-0`
+              ? bannerData.position.includes("overlay")
+                ? "bottom-0 w-full shadow-lg left-0"
+                : `${
+                    bannerData.position === "bottom_left" ? "left-4" : "right-4"
+                  } bottom-4 max-w-lg rounded-xl shadow-xl overflow-hidden`
+              : bannerData.position === "overlay"
+              ? "top-0 w-full shadow-lg left-0"
               : "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-lg rounded-xl shadow-xl overflow-hidden"
           }`}
           style={{ backgroundColor: bannerData.backgroundColor }}
