@@ -786,11 +786,13 @@ const CookieBanner = () => {
                 </div>
               </div>
 
-              <div className="flex gap-2 mb-3">
+              <div className="flex gap-x-2 mb-3">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="!flex-1 !py-[10px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
+                  className="!flex-1 hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                   style={{
+                    paddingTop: '10px !important',
+                    paddingBottom: '10px !important',
                     backgroundColor: bannerData.manageButtonColor,
                     color: bannerData.manageButtonTextColor,
                     border:
@@ -806,8 +808,10 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleRejectAll}
-                  className="!flex-1 !py-[10px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
+                  className="!flex-1 hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                   style={{
+                    paddingTop: '10px !important',
+                    paddingBottom: '10px !important',
                     backgroundColor: bannerData.declineButtonColor,
                     color: bannerData.declineButtonTextColor,
                     border:
@@ -824,8 +828,10 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleAccept}
-                  className="!flex-1 !py-[10px] hover:cursor-pointer text-sm font-medium rounded-md border-none focus:!outline-none"
+                  className="!flex-1 hover:cursor-pointer text-sm font-medium rounded-md border-none focus:!outline-none"
                   style={{
+                    paddingTop: '10px !important',
+                    paddingBottom: '10px !important',
                     backgroundColor: bannerData.acceptButtonColor,
                     color: bannerData.acceptButtonTextColor,
                     border:
@@ -896,8 +902,10 @@ const CookieBanner = () => {
               <div className="w-2/5 flex gap-x-2 justify-end items-center">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border focus:!outline-none"
+                  className="flex-1 hover:cursor-pointer !text-sm rounded-md border focus:!outline-none"
                   style={{
+                    paddingTop: '10px !important',
+                    paddingBottom: '10px !important',
                     backgroundColor: bannerData.manageButtonColor,
                     color: bannerData.manageButtonTextColor,
                     border:
@@ -913,8 +921,10 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleRejectAll}
-                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border focus:!outline-none"
+                  className="flex-1 hover:cursor-pointer !text-sm rounded-md border focus:!outline-none"
                   style={{
+                    paddingTop: '10px !important',
+                    paddingBottom: '10px !important',
                     backgroundColor: bannerData.declineButtonColor,
                     color: bannerData.declineButtonTextColor,
                     border:
@@ -931,8 +941,10 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleAccept}
-                  className="flex-1 !py-[10px] hover:cursor-pointer !text-sm rounded-md border-none focus:!outline-none"
+                  className="flex-1 hover:cursor-pointer !text-sm rounded-md border-none focus:!outline-none"
                   style={{
+                    paddingTop: '10px !important',
+                    paddingBottom: '10px !important',
                     backgroundColor: bannerData.acceptButtonColor,
                     color: bannerData.acceptButtonTextColor,
                     border:
