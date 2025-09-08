@@ -789,7 +789,7 @@ const CookieBanner = () => {
               <div className="flex gap-2 mb-3">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="flex-1 !py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
+                  className="!flex-1 !py-[10px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.manageButtonColor,
                     color: bannerData.manageButtonTextColor,
@@ -806,7 +806,7 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleRejectAll}
-                  className="flex-1 !py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
+                  className="!flex-1 !py-[10px] hover:cursor-pointer text-sm font-medium rounded-md border focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.declineButtonColor,
                     color: bannerData.declineButtonTextColor,
@@ -824,7 +824,7 @@ const CookieBanner = () => {
                 <button
                   disabled={loading}
                   onClick={handleAccept}
-                  className="flex-1 !py-[8px] hover:cursor-pointer text-sm font-medium rounded-md border-none focus:!outline-none"
+                  className="!flex-1 !py-[10px] hover:cursor-pointer text-sm font-medium rounded-md border-none focus:!outline-none"
                   style={{
                     backgroundColor: bannerData.acceptButtonColor,
                     color: bannerData.acceptButtonTextColor,
