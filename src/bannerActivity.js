@@ -2,7 +2,8 @@
 //export const API_BASE_URL = "http://localhost:8005/cookie-manager/api/v1";
 //export const API_BASE_URL = "https://qa-bluetic-cookie.neokred.tech:9444/cookie-manager/api/v1";
 //export const API_BASE_URL = "https://preprod-bluetic-cm-svc.neokred.tech/cookie-manager/api/v1";
-export const API_BASE_URL = "https://cookie-management-svc.blutic.club/cookie-manager/api/v1";
+export const API_BASE_URL =
+  "https://cookie-management-svc.blutic.club/cookie-manager/api/v1";
 
 let browserId = localStorage.getItem("browserId");
 let domainId = localStorage.getItem("domainId");
@@ -43,13 +44,13 @@ function calculateInteractionTime() {
     console.warn("Cookie Banner SDK: No banner shown timestamp found");
     return null;
   }
-  
+
   const currentTime = Date.now();
   const interactionTime = currentTime - parseInt(shownTimestamp);
-  
+
   // Clean up the timestamp after calculation
   localStorage.removeItem("banner_shown_timestamp");
-  
+
   return interactionTime; // Time in milliseconds
 }
 
@@ -150,7 +151,7 @@ async function trackIgnoredInteraction() {
 }
 
 async function setBanenrShown() {
-  try{
+  try {
     if (!domainId) {
       console.error("Cookie Banner SDK: No domainId found");
       return;
@@ -165,9 +166,9 @@ async function setBanenrShown() {
       interactionType: "Shown",
     };
 
-    await makeApiCall("dashboard-analytics", "POST", trackingData)
-  } catch(e){
-    console.error('Cookie Banner SDK: Error during analytics:', e);
+    await makeApiCall("dashboard-analytics", "POST", trackingData);
+  } catch (e) {
+    console.error("Cookie Banner SDK: Error during analytics:", e);
   }
 }
 
@@ -184,7 +185,7 @@ async function trackInteraction(status, data) {
       browserId,
       domainId,
       interactionType: status,
-      selectedCategories: data
+      selectedCategories: data,
     };
 
     // Add interaction time only for accept/reject actions
@@ -323,7 +324,7 @@ async function trackConsentActionWithGTM(status, cookieSettings) {
 
 // Utility function to get domain ID from script URL
 function getDomainIdFromScript() {
-  if (domainId){
+  if (domainId) {
     return domainId;
   }
   const scripts = document.getElementsByTagName("script");
@@ -418,7 +419,11 @@ async function fetchBannerConfig() {
 
   // Fetch the actual configuration
   //const query = browserId ? `?browserId=${browserId}` : "";
-  const result = await makeApiCall(`banner/configs`, "GET", `browserId=${browserId}`);
+  const result = await makeApiCall(
+    `banner/configs`,
+    "GET",
+    `browserId=${browserId}`
+  );
 
   if (result) {
     console.log("Cookie Banner SDK: Banner configuration fetched successfully");
@@ -542,5 +547,5 @@ export {
   setBanenrShown,
   trackIgnoredInteraction,
   cleanupInteractionId,
-  trackInteraction
+  trackInteraction,
 };
